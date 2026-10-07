@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>강의 노트</title>
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231d5f53'/%3E%3Ccircle cx='16' cy='16' r='6' fill='%23fff'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<a class="skip" href="#main">본문으로 건너뛰기</a>
+<div class="app" id="app">
+  <aside class="sidebar" id="sidebar" aria-label="녹음 목록">
+    <div class="side-top">
+      <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>강의 노트</span></div>
+      <div class="side-actions">
+        <a class="btn primary block" href="#/new" id="newBtn">새 녹음</a>
+        <button class="btn block" type="button" id="uploadBtn">파일로 만들기</button>
+      </div>
+      <label class="search">
+        <span class="sr-only">녹음 검색</span>
+        <input type="search" id="searchInput" placeholder="제목, 대본, 메모 검색" autocomplete="off">
+      </label>
+      <div class="filter-row" id="courseFilter" role="group" aria-label="과목으로 거르기"></div>
+    </div>
+    <nav class="library" id="library" aria-label="녹음"></nav>
+    <div class="side-foot"><span id="healthLine" role="status" aria-live="polite">연결 확인 중</span><button class="btn ghost small" type="button" id="settingsBtn">베이스 프롬프트</button></div>
+  </aside>
+
+  <main id="main" tabindex="-1">
+    <div id="recoverBar" class="recover" hidden></div>
+    <section id="view"></section>
+  </main>
+</div>
+
+<div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+
+<dialog id="uploadDlg" aria-labelledby="uploadTitle">
+  <form method="dialog" id="uploadForm" class="dlg">
+    <h2 id="uploadTitle">오디오 파일로 노트 만들기</h2>
+    <p class="muted">녹음 앱이나 줌에서 받은 파일을 올리면 1분 단위로 나눠 받아쓰기해요. 몇 시간짜리 파일도 괜찮아요.</p>
+    <label class="field"><span>파일</span><input type="file" id="upFile" accept="audio/*,video/*,.m4a,.mp3,.wav,.webm,.ogg,.aac,.flac,.mp4,.mov" required></label>
+    <div class="grid2">
+      <label class="field"><span>제목</span><input type="text" id="upTitle" placeholder="비워두면 파일 이름을 써요"></label>
+            <label class="field"><span>과목</span><input type="text" id="upCourse" list="courseList" placeholder="예: BIO101"></label>
+    </div>
+    <div class="progress" id="upProgress" hidden><div class="bar"><span id="upBar"></span></div><span id="upPct" class="mono">0%</span></div>
+    <p class="err" id="upErr" role="alert" hidden></p>
+    <div class="dlg-actions">
+      <button class="btn" value="cancel" type="button" id="upCancel">취소</button>
+      <button class="btn primary" type="submit" id="upSubmit">올리기</button>
+    </div>
+  </form>
+</dialog>
+
+<dialog id="vaultDlg" aria-labelledby="vaultTitle">
+  <form method="dialog" class="dlg" id="vaultForm">
+    <h2 id="vaultTitle">노트 폴더에 저장</h2>
+    <div id="vaultBody"></div>
+    <div class="dlg-actions">
+      <button class="btn" type="button" id="vaultCancel">취소</button>
+      <button class="btn primary" type="submit" id="vaultSubmit">저장</button>
+    </div>
+  </form>
+</dialog>
+
+<dialog id="confirmDlg" aria-labelledby="confirmTitle">
+  <form method="dialog" class="dlg">
+    <h2 id="confirmTitle"></h2>
+    <p id="confirmMsg" class="muted"></p>
+    <div class="dlg-actions">
+      <button class="btn" value="no">취소</button>
+      <button class="btn danger" value="yes" id="confirmYes">확인</button>
+    </div>
+  </form>
+</dialog>
+
+<datalist id="courseList"></datalist>
+<audio id="player" preload="metadata" hidden></audio>
+<script type="module" src="/js/app.js"></script>
+</body>
+</html>

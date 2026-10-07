@@ -1,0 +1,9 @@
+config.local.json
+data/
+server.log
+*.tmp
+.DS_Store
+.codexclaw/
+*.log
+devlog/_plan/
+devlog/_fin/

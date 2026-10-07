@@ -1,0 +1,14 @@
+{
+  "name": "ocx-dictation-web",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=22" },
+  "bin": { "ocx-dictation": "bin/ocx-dictation.mjs" },
+  "scripts": {
+    "start": "node bin/ocx-dictation.mjs start",
+    "test": "node --test tests/*.test.mjs",
+    "check": "node scripts/check-syntax.mjs",
+    "privacy": "node scripts/privacy-scan.mjs"
+  }
+}

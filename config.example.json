@@ -1,0 +1,15 @@
+{
+  "ocxKey": "",
+  "port": 10210,
+  "ocxBase": "http://127.0.0.1:10100",
+  "transcribeModel": "gpt-4o-transcribe",
+  "noteModel": "gpt-6-luna",
+  "refineModel": "gpt-6-luna--fast",
+  "host": "127.0.0.1",
+  "timezone": "Asia/Seoul",
+  "courses": [],
+  "ffmpegPath": "ffmpeg",
+  "ffprobePath": "ffprobe",
+  "concurrency": 2,
+  "vault": null
+}

@@ -1,0 +1,19 @@
+name: Bug report
+description: Report a reproducible problem without personal data
+body:
+  - type: textarea
+    id: behavior
+    attributes:
+      label: What happened?
+      description: Include expected behavior and safe reproduction steps.
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version or commit
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Node version, OS, browser, and endpoint type. Do not paste keys or recordings.

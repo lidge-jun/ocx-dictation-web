@@ -1,0 +1,9 @@
+# Privacy and local security
+
+The app is intended for one person on one computer. It binds to loopback, checks Host against the bound port, mutation Origin and cross-site fetch metadata, rejects wrong JSON media types, caps streamed bodies (2 MiB JSON, 12 MiB segment, 4 GiB upload), contains static and vault paths, and sends CSP and browser security headers. Client errors and logs are redacted. It does not authenticate other processes on the same machine. Keep the computer account and configured model endpoint trustworthy.
+
+Audio, transcripts, notes, and generated documents are stored in the chosen local data directory; upload recovery also uses this browser origin's IndexedDB. Optional vault export writes note Markdown and, when requested, raw transcript under the configured existing vault root. The server sends audio/text to the model endpoint you configure for transcription, refinement, and note generation. That endpoint may process or retain data under its own policy. The app sends no telemetry and has no vendor analytics. The endpoint key stays in the Node process and is never returned by `/api/config`.
+
+The public source tree must contain no recordings, generated session data, local config, credentials, private paths, or personal working records. `npm run privacy` scans tracked and pending nonignored public candidates with generic path/key/binary rules. PNG/JPG images directly under `assets/` require human review; SVG is text-scanned. A private optional denylist file can be passed through `PRIVACY_DENYLIST` using an absolute path outside the repository. The scanner emits only rule ids and file:line; it never prints a matched value. The scan is an early warning: a maintainer must review the exact staged tree and final push range, including screenshot pixels. Private `devlog/_plan/` and `devlog/_fin/` are excluded from the public root.
+
+For undisclosed vulnerabilities use [private reporting](../SECURITY.md).
