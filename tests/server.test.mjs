@@ -110,7 +110,16 @@ test("session to transcript lifecycle", async (t) => {
   const final = await done(base, s.id);
   assert.match(final.segments[0].text, /Example transcript 1/);
   assert.equal(fake.calls(), 1);
-  const disk = JSON.parse(await fsp.readFile(path.join(paths.sessionsDir, s.id, "transcript.json"), "utf8"));
+  // The API reflects memory first; the write-through to transcript.json lands shortly after. Wait for it (bounded)
+  // instead of racing it — slow CI runners exposed the few-millisecond gap.
+  const file = path.join(paths.sessionsDir, s.id, "transcript.json");
+  const deadline = Date.now() + 5000;
+  let disk;
+  for (;;) {
+    disk = JSON.parse(await fsp.readFile(file, "utf8"));
+    if (disk.segments[0]?.status === "done" || Date.now() > deadline) break;
+    await new Promise((r) => setTimeout(r, 25));
+  }
   assert.equal(disk.segments[0].status, "done");
   controller.abort();
 });
