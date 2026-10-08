@@ -102,8 +102,7 @@ textarea { width: 100%; resize: vertical; line-height: 1.55; }
 .sidebar { display: flex; flex-direction: column; border-right: 1px solid var(--line); background: var(--sunken); min-height: 0; }
 .side-top { padding: 16px 14px 10px; display: flex; flex-direction: column; gap: 10px; }
 .brand { display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: 16px; letter-spacing: -0.02em; padding: 2px 2px 4px; }
-.brand-mark { width: 18px; height: 18px; border-radius: 5px; background: var(--accent); position: relative; }
-.brand-mark::after { content: ""; position: absolute; inset: 5px; border-radius: 50%; background: var(--surface); }
+.brand-mark { width: 20px; height: 20px; flex: none; background: url("/icon.svg") center / contain no-repeat; }
 .side-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
 .side-actions .btn { padding: 0 8px; }
 .search input { width: 100%; background: var(--surface); }

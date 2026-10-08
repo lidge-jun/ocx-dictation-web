@@ -41,6 +41,18 @@ test('flags home path, key shape, audio file and hides values', () => {
   } finally { cleanup(root); }
 });
 
+test('a web manifest is scanned as text, not rejected as binary', () => {
+  const root = fixture();
+  try {
+    const key = 's' + 'k-' + 'D'.repeat(20);
+    put(root, 'site/site.webmanifest', `{"name":"Example","note":"${key}"}\n`);
+    const out = scan(root);
+    assert.equal(out.status, 1);
+    assert.match(out.stderr, /key-shape site\/site\.webmanifest:1/);
+    assert.doesNotMatch(out.stderr, /binary-format/);
+  } finally { cleanup(root); }
+});
+
 test('a sensitive staged version is flagged even after an unstaged cleanup', () => {
   const root = fixture();
   try {

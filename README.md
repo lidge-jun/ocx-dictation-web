@@ -1,6 +1,9 @@
+<p><img src="assets/logo.svg" alt="" width="72" height="72"></p>
+
 # Lecture Notes Studio
 
 Record, transcribe, and turn lectures or meetings into notes on your own computer.
+[Project site](https://lidge-jun.github.io/ocx-dictation-web/)
 
 ![A fictional session in Lecture Notes Studio](assets/screenshot.png)
 

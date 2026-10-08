@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Lecture Notes Studio">
+  <title>Lecture Notes Studio</title>
+  <style>
+    .page { fill: #1d5f53; }
+    .ink { fill: #fffefb; }
+    .rec { fill: #d9443a; }
+    @media (prefers-color-scheme: dark) { .page { fill: #2a7a6a; } }
+  </style>
+  <rect class="page" x="8" y="8" width="112" height="112" rx="26"/>
+  <circle class="ink" cx="41" cy="65" r="17"/>
+  <rect class="ink" x="64" y="51" width="44" height="7" rx="3.5"/>
+  <rect class="ink" x="64" y="61.5" width="35" height="7" rx="3.5"/>
+  <rect class="ink" x="64" y="72" width="25" height="7" rx="3.5"/>
+  <circle class="rec" cx="98" cy="30" r="7"/>
+</svg>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <style>
+    .page { fill: #1d5f53; }
+    @media (prefers-color-scheme: dark) { .page { fill: #2a7a6a; } }
+  </style>
+  <rect class="page" width="32" height="32" rx="8"/>
+  <circle cx="10.5" cy="17" r="5" fill="#fffefb"/>
+  <rect x="17.5" y="12.5" width="10" height="3.2" rx="1.6" fill="#fffefb"/>
+  <rect x="17.5" y="18.3" width="7" height="3.2" rx="1.6" fill="#fffefb"/>
+  <circle cx="25.5" cy="6.8" r="2.6" fill="#d9443a"/>
+</svg>

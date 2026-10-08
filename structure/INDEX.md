@@ -14,5 +14,6 @@ This file routes changes to the owner of the current implementation. User instru
 | Browser recorder and tabs | `public/js/live.js`, `recorder.js`, `store.js`, `uploader.js`, `upload-drain.js`, `recovery.js`, `tabsync.js`, `stop-ownership.js`, `local-lock-queue.js` under `public/js/`, plus `public/recorder-worklet.js` | `tests/tabsync.test.mjs`, `tests/live-recovery.test.mjs`, `tests/wp3-c-fixes.test.mjs`, browser smoke; `docs/architecture.md` |
 | Browser views and drafts | `public/js/app.js`, `session.js`, `notes.js`, `note-stashes.js`, `vault.js`, `settings.js`, `ai.js`, `markdown.js`, `diff.js`, `util.js` under `public/js/` | `tests/notes-revision.test.mjs`, browser smoke; `README.md` |
 | Public-tree scan and CI | `scripts/privacy-scan.mjs`, `.github/workflows/ci.yml` | `tests/privacy-scan.test.mjs`; `docs/privacy.md` |
+| Brand marks and project site | `assets/logo.svg`, `assets/icon.svg`, `public/icon.svg`, `scripts/render-brand-icons.mjs` (PNG icons), `site/`, `.github/workflows/pages.yml` | `DESIGN.md`; privacy scan; Pages deploy run |
 
 When a path or wire contract changes, update its row and linked documentation in the same change. `devlog/README.md` explains the local record boundary.

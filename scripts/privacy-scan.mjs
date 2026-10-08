@@ -12,7 +12,9 @@ const archives = new Set(['.zip', '.tar', '.gz', '.tgz', '.7z']);
 const allowedImage = (name) => /^assets\/[^/]+\.(png|jpg)$/i.test(name); // SVG is text: scanned normally below
 // A round 1: allowlist of text formats. Any other extension (e.g. .pdf, .docx, .sqlite) is an unapproved binary format
 // regardless of whether its bytes happen to decode as UTF-8. Extensionless files (LICENSE, dotfiles) are text.
-const textExt = new Set(['', '.mjs', '.js', '.cjs', '.json', '.md', '.css', '.html', '.yml', '.yaml', '.txt', '.svg']);
+const textExt = new Set([
+  '', '.mjs', '.js', '.cjs', '.json', '.md', '.css', '.html', '.yml', '.yaml', '.txt', '.svg', '.webmanifest',
+]);
 const homePattern = new RegExp(
   '(?:/U' + 'sers/[^/\\s]+/|/ho' + 'me/[^/\\s]+/|' +
   '[A-Za-z]:\\\\U' + 'sers\\\\[^\\\\\\s]+\\\\)', 'i',

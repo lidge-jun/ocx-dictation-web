@@ -1,3 +1,5 @@
+<p><img src="assets/logo.svg" alt="" width="72" height="72"></p>
+
 # Lecture Notes Studio
 
 내 컴퓨터에서 녹음하고, 받아쓰고, 필기를 정리하는 웹 앱입니다. 화면은 한국어로 제공됩니다. [English README](README.md).

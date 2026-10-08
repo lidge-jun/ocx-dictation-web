@@ -1,0 +1,12 @@
+{
+  "name": "Lecture Notes Studio",
+  "short_name": "Lecture Notes",
+  "icons": [
+    { "src": "assets/icon-192.png", "type": "image/png", "sizes": "192x192" },
+    { "src": "assets/icon-512.png", "type": "image/png", "sizes": "512x512" },
+    { "src": "assets/icon-maskable-512.png", "type": "image/png", "sizes": "512x512", "purpose": "maskable" }
+  ],
+  "theme_color": "#1d5f53",
+  "background_color": "#f6f5f1",
+  "display": "browser"
+}
